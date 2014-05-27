@@ -9,7 +9,7 @@ import (
 	. "github.com/lxn/walk/declarative"
 	"math/rand"
 	"os"
-	//	"strings"
+	"strings"
 	"time"
 )
 
@@ -128,8 +128,8 @@ func InitDatabase() {
 	collection.Index([]string{"lastname"})
 }
 func BtnAddName() {
-	first := mw.firstLE.Text()
-	last := mw.lastLE.Text()
+	first := strings.TrimSpace(mw.firstLE.Text())
+	last := strings.TrimSpace(mw.lastLE.Text())
 	name := Name{first, last}
 	fmt.Println("name =", name)
 	database := GetDb()
